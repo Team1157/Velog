@@ -40,10 +40,10 @@ while True:
 
     # find the average distance between two points
     d = np.average([np.sqrt((p1[i][0] - p2[i][0])**2 + (p1[i][1] - p2[i][1])**2) for i, array in enumerate(p1)])
-    theta = #TODO
+    theta = np.average(np.arctan((p1[i][1] - p2[i][1]) / (p1[i][0] - p2[i][0])) for i, array in enumerate(p1))
     dt = time.time() - start_time
     v = d/dt
-    print(v)
+    print(f'{v} at {theta}')
 
 
 cam.release()
